@@ -103,10 +103,25 @@ const html = `<!DOCTYPE html>
     th { background: #f6f7f9; }
     code { font-size: 0.9em; }
     .muted { color: #555; }
+    .backlink {
+      margin: 1.25rem 0 1.5rem;
+      padding: 0.9rem 1.1rem;
+      border: 2px solid #111;
+      background: #f6f7f9;
+      border-radius: 6px;
+    }
+    .backlink a { font-weight: 700; }
   </style>
 </head>
 <body>
   <h1>rea-run-lab · demo smoke report</h1>
+  <aside class="backlink" role="note">
+    <p><strong>Teaching site:</strong>
+      <a href="https://rea.run/">rea.run</a>
+      · <a href="https://rea.run/zh/" hreflang="zh">rea.run/zh</a>
+      — <strong>independent community site</strong>（独立社区站）.
+      Not affiliated with morluto or the REA maintainers.</p>
+  </aside>
   <p>Status: <span class="${report.ok ? 'ok' : 'bad'}">${report.ok ? 'OK' : 'FAILED'}</span>
      · lab <code>${LAB_VERSION}</code> · generated <code>${generatedAt}</code></p>
   <p class="muted">${escapeHtml(report.evidenceStyle.note)}</p>
@@ -125,6 +140,7 @@ ${findings}
   <ul>
     <li>Own bundled demo only (<code>demo/</code>)</li>
     <li>No arbitrary binary uploads</li>
+    <li>Teaching docs: <a href="https://rea.run/">rea.run</a> · <a href="https://rea.run/zh/" hreflang="zh">rea.run/zh</a> — independent community site（独立社区站）, not affiliated with morluto / REA maintainers</li>
   </ul>
   <p class="muted">JSON twin: <code>smoke-report.json</code> in the same Artifacts bundle.</p>
 </body>

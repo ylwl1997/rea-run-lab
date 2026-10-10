@@ -4,7 +4,9 @@
 
 Public lab for [REA](https://rea.run/) (`rea-agents`) against a **bundled, self-owned Electron-shaped demo** — not arbitrary binaries.
 
-Site: [rea.run/docs/install/](https://rea.run/docs/install/#actions-demo) · [中文](https://rea.run/zh/docs/install/#actions-demo)
+> **Teaching site:** **[rea.run](https://rea.run/)** · **[中文 / zh](https://rea.run/zh/)** — **independent community site**（独立社区站）. Not affiliated with morluto or the REA maintainers.
+>
+> Install notes: [rea.run/docs/install/](https://rea.run/docs/install/#actions-demo) · [中文](https://rea.run/zh/docs/install/#actions-demo)
 
 
 ## Actions 演示流水线（推荐访客路径）
@@ -43,7 +45,7 @@ Dev Container files remain for maintainers and anyone who wants an interactive s
 
 - Analyze the **bundled demo** or software **you own / ship / have written permission** to study.
 - **No arbitrary binary uploads.**
-- Not an official REA product. Upstream: [morluto/rea](https://github.com/morluto/rea). Teaching site: [rea.run](https://rea.run/).
+- Not an official REA product. Upstream: [morluto/rea](https://github.com/morluto/rea). Teaching site: **[rea.run](https://rea.run/)** · **[中文](https://rea.run/zh/)** — independent community site（独立社区站）, not affiliated with morluto or the REA maintainers.
 - No crack / DRM / license-bypass content. [Legal boundary](https://rea.run/faq/legal-boundary/).
 
 ## License
