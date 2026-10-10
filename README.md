@@ -1,59 +1,50 @@
 # rea-run-lab
 
-[![Open in GitHub Codespaces](https://img.shields.io/badge/GitHub_Codespaces-Open-blue?logo=github)](https://codespaces.new/ylwl1997/rea-run-lab?quickstart=1)
-One-click **Codespaces** lab for trying [REA](https://rea.run/) (`rea-agents`) against a **bundled, self-owned Electron-shaped demo** — not arbitrary binaries.
+[![demo-smoke](https://github.com/ylwl1997/rea-run-lab/actions/workflows/demo-smoke.yml/badge.svg)](https://github.com/ylwl1997/rea-run-lab/actions/workflows/demo-smoke.yml)
 
-Site docs: [rea.run/docs/install/](https://rea.run/docs/install/) · [中文安装](https://rea.run/zh/docs/install/)
+Public lab for [REA](https://rea.run/) (`rea-agents`) against a **bundled, self-owned Electron-shaped demo** — not arbitrary binaries.
 
-## Open in Codespaces
+Site: [rea.run/docs/install/](https://rea.run/docs/install/#actions-demo) · [中文](https://rea.run/zh/docs/install/#actions-demo)
 
-1. Click **Open in GitHub Codespaces** above (or use the green **Code → Codespaces** button).
-2. Wait for the Dev Container (Node 22). `postCreateCommand` runs the demo smoke + inventory.
-3. In the Codespaces terminal:
+## Actions 演示流水线（推荐访客路径）
+
+1. Open **[Actions](https://github.com/ylwl1997/rea-run-lab/actions)** on this repo.
+2. Select workflow **demo-smoke** → **Run workflow** (branch `main`).
+3. When the run finishes, open the run summary → **Artifacts** → download `smoke-report` (JSON + HTML Evidence-style teaching report).
+4. Optional: if GitHub Pages is enabled for this repo, the latest successful `main` run also publishes the HTML report to Pages (see the run’s **pages** job / environment URL).
 
 ```bash
-# Optional: see what setup would write (no client changes yet)
-npx -y rea-agents@latest setup --dry-run
-
-# When you are ready to register MCP with your agent host inside Codespaces:
-npx -y rea-agents@latest setup
+# Same checks locally
+node scripts/smoke.mjs
+node scripts/inventory-demo.mjs
 ```
 
-4. Point REA at the **bundled demo only**:
+## Codespaces / Dev Container（可选）
 
-```text
-/workspaces/rea-run-lab/demo
-```
+Dev Container files remain for maintainers and anyone who wants an interactive shell:
 
-Ask for Evidence on export paths / IPC (`lab:export-snapshot`, `buildExportPayload`), then keep unknowns marked.
+[![Open in GitHub Codespaces](https://img.shields.io/badge/GitHub_Codespaces-Open-blue?logo=github)](https://codespaces.new/ylwl1997/rea-run-lab?quickstart=1)
+
+1. Open Codespaces (Node 22). `postCreateCommand` runs smoke + inventory.
+2. Optional: `npx -y rea-agents@latest setup --dry-run` then `setup`.
+3. Point REA at `/workspaces/rea-run-lab/demo` only.
 
 ## What is included
 
 | Path | Purpose |
 |------|---------|
-| `demo/` | Self-owned Electron-shaped teaching target (main / preload / renderer / `lib/exportPath.js`) |
-| `scripts/smoke.mjs` | CI + local smoke (no Electron required) |
-| `scripts/inventory-demo.mjs` | Static inventory of the demo |
+| `demo/` | Self-owned Electron-shaped teaching target |
+| `scripts/smoke.mjs` | Smoke + Evidence-style HTML/JSON report |
+| `scripts/inventory-demo.mjs` | Static inventory |
+| `.github/workflows/demo-smoke.yml` | Actions: workflow_dispatch + push; Artifacts; optional Pages |
 | `.devcontainer/` | Codespaces / Dev Containers (Node 22) |
 
-## Compliance (read this)
+## Compliance
 
-- **Local / Codespaces only** for this lab flow. Analyze the bundled demo or software **you own / ship / have written permission** to study.
-- **No arbitrary binary uploads.** Do not drop commercial installers, cracked packages, or strangers’ malware into this repo or Codespace.
-- **Not an official REA product.** Upstream is [morluto/rea](https://github.com/morluto/rea); teaching site is [rea.run](https://rea.run/).
-- **No crack / DRM / license-bypass content.** See [legal boundary](https://rea.run/faq/legal-boundary/).
-- Primary docs stay on **rea.run** — this lab does not CTA competitor mirrors.
-
-## Optional CI smoke
-
-A ready-to-enable Actions workflow lives at [`ci/smoke.yml`](ci/smoke.yml). Copy it to `.github/workflows/smoke.yml` if your token has the `workflow` scope (initial publish used an OAuth app without that scope). Locally:
-
-## Quick checks without REA
-
-```bash
-node scripts/smoke.mjs
-node scripts/inventory-demo.mjs
-```
+- Analyze the **bundled demo** or software **you own / ship / have written permission** to study.
+- **No arbitrary binary uploads.**
+- Not an official REA product. Upstream: [morluto/rea](https://github.com/morluto/rea). Teaching site: [rea.run](https://rea.run/).
+- No crack / DRM / license-bypass content. [Legal boundary](https://rea.run/faq/legal-boundary/).
 
 ## License
 

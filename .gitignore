@@ -1,5 +1,5 @@
-node_modules/
-artifacts/
-.DS_Store
 *.log
+.DS_Store
+artifacts/
+node_modules/
 uploads/
