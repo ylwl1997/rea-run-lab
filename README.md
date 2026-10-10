@@ -6,15 +6,12 @@ Public lab for [REA](https://rea.run/) (`rea-agents`) against a **bundled, self-
 
 Site: [rea.run/docs/install/](https://rea.run/docs/install/#actions-demo) · [中文](https://rea.run/zh/docs/install/#actions-demo)
 
-> **Enable workflow once:** OAuth used to publish this repo lacked the `workflow` scope, so `.github/workflows/demo-smoke.yml` could not be pushed. Canonical YAML is in [`ci/demo-smoke.yml`](ci/demo-smoke.yml) — see [`ci/ENABLE-WORKFLOW.md`](ci/ENABLE-WORKFLOW.md) (`gh auth refresh -s workflow` or paste via web UI). After it lands, **Run workflow** appears under Actions.
-
 
 ## Actions 演示流水线（推荐访客路径）
 
 1. Open **[Actions](https://github.com/ylwl1997/rea-run-lab/actions)** on this repo.
 2. Select workflow **demo-smoke** → **Run workflow** (branch `main`).
 3. When the run finishes, open the run summary → **Artifacts** → download `smoke-report` (JSON + HTML Evidence-style teaching report).
-4. Optional: if GitHub Pages is enabled for this repo, the latest successful `main` run also publishes the HTML report to Pages (see the run’s **pages** job / environment URL).
 
 ```bash
 # Same checks locally
@@ -39,7 +36,7 @@ Dev Container files remain for maintainers and anyone who wants an interactive s
 | `demo/` | Self-owned Electron-shaped teaching target |
 | `scripts/smoke.mjs` | Smoke + Evidence-style HTML/JSON report |
 | `scripts/inventory-demo.mjs` | Static inventory |
-| `.github/workflows/demo-smoke.yml` | Actions: workflow_dispatch + push; Artifacts; optional Pages |
+| `.github/workflows/demo-smoke.yml` | Actions: workflow_dispatch + push; Artifacts (JSON + HTML) |
 | `.devcontainer/` | Codespaces / Dev Containers (Node 22) |
 
 ## Compliance

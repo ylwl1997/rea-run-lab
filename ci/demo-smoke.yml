@@ -7,8 +7,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: demo-smoke-${{ github.ref }}
@@ -35,19 +33,3 @@ jobs:
             artifacts/smoke-report.json
             artifacts/smoke-report.html
           if-no-files-found: error
-      - name: Upload Pages artifact
-        if: success() && github.ref == 'refs/heads/main'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: artifacts/pages
-
-  pages:
-    needs: smoke
-    if: success() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
