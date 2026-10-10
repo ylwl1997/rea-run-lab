@@ -1,0 +1,15 @@
+{
+  "name": "rea-run-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Codespaces lab for authorized REA demos (bundled self-owned Electron-shaped targets only)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "demo:inventory": "node scripts/inventory-demo.mjs",
+    "demo:smoke": "node scripts/smoke.mjs",
+    "setup:dry": "npx -y rea-agents@latest setup --dry-run"
+  }
+}

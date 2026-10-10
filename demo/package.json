@@ -1,0 +1,8 @@
+{
+  "name": "rea-lab-demo-export",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Self-owned Electron-shaped teaching target for REA static JS analysis",
+  "main": "main/index.js",
+  "license": "MIT"
+}

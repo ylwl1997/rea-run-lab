@@ -1,0 +1,19 @@
+{
+  "name": "rea-run-lab",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "features": {},
+  "postCreateCommand": "node scripts/smoke.mjs && npm run demo:inventory",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint"],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    },
+    "codespaces": {
+      "openFiles": ["README.md"]
+    }
+  },
+  "forwardPorts": [],
+  "remoteUser": "node"
+}
