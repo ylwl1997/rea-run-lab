@@ -1,8 +1,6 @@
 # rea-run-lab
 
 [![Open in GitHub Codespaces](https://img.shields.io/badge/GitHub_Codespaces-Open-blue?logo=github)](https://codespaces.new/ylwl1997/rea-run-lab?quickstart=1)
-[![demo-smoke](https://github.com/ylwl1997/rea-run-lab/actions/workflows/smoke.yml/badge.svg)](https://github.com/ylwl1997/rea-run-lab/actions/workflows/smoke.yml)
-
 One-click **Codespaces** lab for trying [REA](https://rea.run/) (`rea-agents`) against a **bundled, self-owned Electron-shaped demo** — not arbitrary binaries.
 
 Site docs: [rea.run/docs/install/](https://rea.run/docs/install/) · [中文安装](https://rea.run/zh/docs/install/)
@@ -45,6 +43,10 @@ Ask for Evidence on export paths / IPC (`lab:export-snapshot`, `buildExportPaylo
 - **Not an official REA product.** Upstream is [morluto/rea](https://github.com/morluto/rea); teaching site is [rea.run](https://rea.run/).
 - **No crack / DRM / license-bypass content.** See [legal boundary](https://rea.run/faq/legal-boundary/).
 - Primary docs stay on **rea.run** — this lab does not CTA competitor mirrors.
+
+## Optional CI smoke
+
+A ready-to-enable Actions workflow lives at [`ci/smoke.yml`](ci/smoke.yml). Copy it to `.github/workflows/smoke.yml` if your token has the `workflow` scope (initial publish used an OAuth app without that scope). Locally:
 
 ## Quick checks without REA
 
