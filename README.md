@@ -1,10 +1,13 @@
 # rea-run-lab
 
-[![demo-smoke](https://github.com/ylwl1997/rea-run-lab/actions/workflows/demo-smoke.yml/badge.svg)](https://github.com/ylwl1997/rea-run-lab/actions/workflows/demo-smoke.yml)
+[![Actions](https://img.shields.io/badge/GitHub_Actions-demo--smoke-blue?logo=githubactions)](https://github.com/ylwl1997/rea-run-lab/actions)
 
 Public lab for [REA](https://rea.run/) (`rea-agents`) against a **bundled, self-owned Electron-shaped demo** — not arbitrary binaries.
 
 Site: [rea.run/docs/install/](https://rea.run/docs/install/#actions-demo) · [中文](https://rea.run/zh/docs/install/#actions-demo)
+
+> **Enable workflow once:** OAuth used to publish this repo lacked the `workflow` scope, so `.github/workflows/demo-smoke.yml` could not be pushed. Canonical YAML is in [`ci/demo-smoke.yml`](ci/demo-smoke.yml) — see [`ci/ENABLE-WORKFLOW.md`](ci/ENABLE-WORKFLOW.md) (`gh auth refresh -s workflow` or paste via web UI). After it lands, **Run workflow** appears under Actions.
+
 
 ## Actions 演示流水线（推荐访客路径）
 
